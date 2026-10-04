@@ -11,6 +11,8 @@
       rel="stylesheet"
     />
     <link rel="stylesheet" href="css/style.css" />
+    <link rel="stylesheet" href="css/kaart.css" />
+    <script src="js/projecten.js"></script>
   </head>
   <body>
     <header>
@@ -31,53 +33,26 @@
       </section>
 
       <section class="section" aria-label="Projectenoverzicht">
-        <div class="container card-grid">
-          <article class="card">
-            <h2>Taakplanner</h2>
-            <p>
-              Een webapp in C# waarmee teams taken verdelen en deadlines
-              bijhouden, met een eenvoudig dashboard voor de voortgang.
-            </p>
-          </article>
+        <div class="container filters">
+          <label for="filter-taal">Taal</label>
+          <select id="filter-taal">
+            <option value="alle">Alle talen</option>
+            <option value="C#">C#</option>
+            <option value="Python">Python</option>
+            <option value="JavaScript">JavaScript</option>
+          </select>
 
-          <article class="card">
-            <h2>Weerstation</h2>
-            <p>
-              Een Python-script dat weerdata ophaalt en de temperatuur van de
-              afgelopen week weergeeft in een duidelijke grafiek.
-            </p>
-          </article>
-
-          <article class="card">
-            <h2>Recepten-app</h2>
-            <p>
-              Een JavaScript-app om recepten op te slaan en te doorzoeken op
-              ingrediënt, met een boodschappenlijst die zichzelf bijwerkt.
-            </p>
-          </article>
-
-          <article class="card">
-            <h2>Portfolio-site</h2>
-            <p>
-              Deze website, volledig met HTML en CSS gebouwd en responsive voor
-              telefoon, tablet en desktop.
-            </p>
-          </article>
-
-          <article class="card">
-            <h2>Test Project 1</h2>
-            <p>
-              Dit is alleen puur voor demonstratie van mijn projecten pagina.
-            </p>
-          </article>
-
-          <article class="card">
-            <h2>Test Project 2</h2>
-            <p>
-              Dit is alleen puur voor demonstratie van mijn projecten pagina.
-            </p>
-          </article>
+          <label for="sorteer">Sorteer op</label>
+          <select id="sorteer">
+            <option value="nieuw">Nieuwste eerst</option>
+            <option value="oud">Oudste eerst</option>
+            <option value="titel">Titel (A-Z)</option>
+          </select>
         </div>
+
+        <p id="status" class="container" aria-live="polite">Projecten laden…</p>
+
+        <div class="container card-grid" id="projecten-lijst"></div>
       </section>
     </main>
 
