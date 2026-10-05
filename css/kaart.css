@@ -1,5 +1,5 @@
 /* === Kaartenraster === */
- 
+
 .card-grid {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
@@ -7,13 +7,13 @@
   margin-block: 0;
   list-style: none;
 }
- 
+
 .card-grid li {
   display: grid;
 }
- 
+
 /* === Kaart === */
- 
+
 .card {
   display: flex;
   flex-direction: column;
@@ -23,42 +23,33 @@
   background-color: var(--color-light-gray);
   text-align: center;
 }
- 
+
 .card h2 {
   margin: 0 0 12px;
   font-size: 1.5rem;
   text-transform: uppercase;
 }
- 
+
 .card p {
   margin: 0;
-  font-size: 0.88rem;
+  font-size: 1rem;
   line-height: 1.5;
 }
- 
+
 .card-meta {
   margin-top: 16px;
   font-size: 0.8rem;
 }
- 
-.card--dark {
-  background-color: var(--color-dark);
-  color: var(--color-white);
-}
- 
-.card--white {
-  background-color: var(--color-white);
-}
- 
+
 /* === Sorteren en status (projecten) === */
- 
+
 .sorteren {
   display: flex;
   align-items: center;
   gap: 12px;
   margin-bottom: 24px;
 }
- 
+
 .sorteren select {
   padding: 8px 12px;
   border: 1px solid var(--color-dark);
@@ -67,39 +58,38 @@
   background-color: var(--color-white);
   color: var(--color-dark);
 }
- 
+
 .sorteren select:focus-visible {
   outline: 2px solid var(--color-dark);
   outline-offset: 2px;
 }
- 
+
 .status {
   margin-block: 0;
 }
- 
+
 .status:not(:empty) {
   margin-bottom: 24px;
 }
- 
+
 /* === Mobiel === */
- 
+
 @media (max-width: 768px) {
   .card-grid {
     grid-template-columns: 1fr;
     gap: 16px;
   }
- 
+
   .card {
     min-height: 200px;
     padding: 40px 24px;
   }
- 
+
   .card h2 {
     font-size: 1.25rem;
   }
- 
+
   .card p {
     font-size: 0.875rem;
   }
 }
- 
