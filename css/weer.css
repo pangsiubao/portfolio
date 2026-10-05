@@ -12,6 +12,10 @@
   margin: 0;
 }
 
+.weer .weer__text {
+  margin-bottom: 16px;
+}
+
 .weer__info {
   display: flex;
   flex-direction: column;

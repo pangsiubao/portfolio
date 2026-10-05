@@ -1,12 +1,9 @@
-// Elementen uit de HTML
 const weerStatus = document.querySelector("#weer-status");
 const weerInfo = document.querySelector("#weer-info");
 
-// Adres van de API: huidige temperatuur en weercode voor Den Haag
 const weerUrl =
   "https://api.open-meteo.com/v1/forecast?latitude=52.08&longitude=4.30&current=temperature_2m,weather_code&timezone=Europe%2FAmsterdam";
 
-// Zet de weercode van de API om naar een omschrijving
 const beschrijfWeer = (code) => {
   if (code === 0) {
     return "Onbewolkt";
@@ -31,7 +28,6 @@ const beschrijfWeer = (code) => {
   }
 };
 
-// Zet het weer op de pagina
 const toonWeer = (weer) => {
   const temperatuur = document.createElement("p");
   temperatuur.classList.add("weer__temperatuur");
@@ -51,7 +47,6 @@ const toonWeer = (weer) => {
   weerInfo.append(temperatuur, omschrijving, bijgewerkt);
 };
 
-// Haalt het actuele weer op bij Open-Meteo
 const laadWeer = () => {
   fetch(weerUrl)
     .then((response) => {
