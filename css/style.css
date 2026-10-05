@@ -6,6 +6,8 @@
   --color-dark: #1d1d1f;
 }
 
+/*  basis */
+
 * {
   box-sizing: border-box;
 }
@@ -16,22 +18,17 @@ body {
   color: var(--color-dark);
 }
 
-footer {
-  padding: 20px;
-  border-top: 1px solid var(--color-gray);
-  text-align: center;
-  font-size: 0.875rem;
-}
-
 a {
   color: inherit;
   text-decoration: none;
 }
 
-a:hover {
+a:hover,
+a:focus-visible {
   text-decoration: underline;
 }
 
+/* Header en navigatie */
 header {
   display: flex;
   justify-content: space-between;
@@ -62,11 +59,38 @@ header {
   font-weight: 700;
 }
 
+/* Layout */
+
 .container {
   max-width: 1400px;
   margin-inline: auto;
   padding-inline: 20px;
 }
+
+.section {
+  padding-block: 40px;
+}
+
+.section--gray {
+  background-color: var(--color-gray);
+}
+
+/* Hero */
+
+.hero {
+  padding-block: 70px;
+  text-align: center;
+  background-color: var(--color-dark);
+  color: var(--color-white);
+}
+
+.hero h1 {
+  margin: 0;
+  font-size: 1.5rem;
+  text-transform: uppercase;
+}
+
+/* Over mij (index) */
 
 .about {
   background-color: var(--color-gray);
@@ -82,55 +106,31 @@ header {
 
 .about__text {
   flex: 0 1 400px;
-}
-
-.about__text h1 {
-  font-size: 1.5rem;
-  margin: 0 0 8px;
-}
-
-.about__text p {
+  margin: 0;
   font-size: 1.125rem;
   line-height: 1.25;
-  margin: 0;
 }
 
 .about__photo {
   flex: 0 0 257px;
-}
-
-.about__photo img {
-  display: block;
-  width: 100%;
+  height: auto;
   aspect-ratio: 8 / 9;
   object-fit: cover;
 }
 
-.hero {
-  padding-block: 70px;
-  text-align: center;
+/* Footer */
+
+body > footer {
+  padding: 20px;
+  border-top: 1px solid var(--color-gray);
+  text-align: right;
+  font-size: 0.875rem;
 }
 
-.hero h1 {
-  margin: 0;
-  font-size: 1.5rem;
-  text-transform: uppercase;
-}
-
-.hero--dark {
-  background-color: var(--color-dark);
-  color: var(--color-white);
-}
-
-.section {
-  padding-block: 40px;
-}
-
-.section--gray {
-  background-color: var(--color-gray);
-}
+/* Mobiel */
 
 @media (max-width: 768px) {
+  /* Header en navigatie */
   header {
     flex-direction: column;
     gap: 12px;
@@ -151,6 +151,17 @@ header {
     gap: 12px 24px;
   }
 
+  /* Layout */
+  .section {
+    padding-block: 24px;
+  }
+
+  /* Hero */
+  .hero {
+    padding-block: 56px;
+  }
+
+  /* Over mij */
   .about {
     padding-block: 40px;
   }
@@ -169,13 +180,5 @@ header {
   .about__photo {
     max-width: 257px;
     margin-inline: auto;
-  }
-
-  .hero {
-    padding-block: 56px;
-  }
-
-  .section {
-    padding-block: 24px;
   }
 }

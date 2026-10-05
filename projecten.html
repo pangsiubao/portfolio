@@ -12,7 +12,7 @@
     />
     <link rel="stylesheet" href="css/style.css" />
     <link rel="stylesheet" href="css/kaart.css" />
-    <script src="js/projecten.js"></script>
+    <script src="js/projecten.js" defer></script>
   </head>
   <body>
     <header>
@@ -33,33 +33,20 @@
       </section>
 
       <section class="section" aria-label="Projectenoverzicht">
-        <div class="container filters">
-          <label for="filter-taal">Taal</label>
-          <select id="filter-taal">
-            <option value="alle">Alle talen</option>
-            <option value="C#">C#</option>
-            <option value="Python">Python</option>
-            <option value="JavaScript">JavaScript</option>
-          </select>
-
-          <label for="sorteer">Sorteer op</label>
+        <label class="container sorteren">
+          Sorteer op datum
           <select id="sorteer">
             <option value="nieuw">Nieuwste eerst</option>
             <option value="oud">Oudste eerst</option>
-            <option value="titel">Titel (A-Z)</option>
           </select>
-        </div>
-
-        <p id="status" class="container" aria-live="polite">Projecten laden…</p>
-
-        <div class="container card-grid" id="projecten-lijst"></div>
+        </label>
+        <p id="status" class="container status" role="status">Projecten laden…</p>
+        <ul class="container card-grid" id="projecten-lijst"></ul>
       </section>
     </main>
 
     <footer>
-      <div>
-        <p>© 2026 Tine Siu</p>
-      </div>
+      <p>© 2026 Tine Siu</p>
     </footer>
   </body>
 </html>
