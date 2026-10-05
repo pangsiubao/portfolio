@@ -1,4 +1,4 @@
-/* === Kaartenraster === */
+/* Kaartenraster */
 
 .card-grid {
   display: grid;
@@ -12,7 +12,7 @@
   display: grid;
 }
 
-/* === Kaart === */
+/* Kaart */
 
 .card {
   display: flex;
@@ -41,7 +41,7 @@
   font-size: 0.8rem;
 }
 
-/* === Sorteren en status (projecten) === */
+/* Sorteren en status projecten */
 
 .sorteren {
   display: flex;
@@ -72,7 +72,7 @@
   margin-bottom: 24px;
 }
 
-/* === Mobiel === */
+/* Mobiel */
 
 @media (max-width: 768px) {
   .card-grid {
