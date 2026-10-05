@@ -1,0 +1,30 @@
+.weer {
+  text-align: center;
+}
+
+.weer h2 {
+  margin: 0 0 16px;
+  font-size: 1.5rem;
+  text-transform: uppercase;
+}
+
+.weer p {
+  margin: 0;
+}
+
+.weer__info {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 4px;
+}
+
+.weer__temperatuur {
+  font-size: 2.5rem;
+  font-weight: 700;
+}
+
+.weer__tijd {
+  font-size: 0.875rem;
+  color: #555555;
+}

@@ -90,7 +90,7 @@ header {
   text-transform: uppercase;
 }
 
-/* Over mij (index) */
+/* Over mij */
 
 .about {
   background-color: var(--color-gray);
@@ -123,7 +123,7 @@ header {
 body > footer {
   padding: 20px;
   border-top: 1px solid var(--color-gray);
-  text-align: right;
+  text-align: center;
   font-size: 0.875rem;
 }
 

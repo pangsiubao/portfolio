@@ -36,54 +36,54 @@
       <section class="hero">
         <h1>Contact</h1>
       </section>
+
+      <section class="section" aria-label="Contactformulier">
+        <form class="container formulier" id="contactformulier" novalidate>
+          <div class="veld">
+            <label for="naam">Naam: </label>
+            <input
+              type="text"
+              id="naam"
+              name="naam"
+              autocomplete="name"
+              required
+              aria-describedby="naam-fout"
+            />
+            <p class="foutmelding" id="naam-fout"></p>
+          </div>
+
+          <div class="veld">
+            <label for="email">E-mailadres: </label>
+            <input
+              type="email"
+              id="email"
+              name="email"
+              autocomplete="email"
+              required
+              aria-describedby="email-fout"
+            />
+            <p class="foutmelding" id="email-fout"></p>
+          </div>
+
+          <div class="veld">
+            <label for="bericht">Bericht: </label>
+            <p class="hint" id="bericht-hint">Minimaal 20 tekens.</p>
+            <textarea
+              id="bericht"
+              name="bericht"
+              rows="6"
+              required
+              aria-describedby="bericht-hint bericht-fout"
+            ></textarea>
+            <p class="foutmelding" id="bericht-fout"></p>
+          </div>
+
+          <button type="submit">Versturen</button>
+
+          <p class="bevestiging" id="bevestiging" role="status"></p>
+        </form>
+      </section>
     </main>
-
-    <section class="section" aria-label="Contactformulier">
-      <form class="container formulier" id="contactformulier" novalidate>
-        <div class="veld">
-          <label for="naam">Naam: </label>
-          <input
-            type="text"
-            id="naam"
-            name="naam"
-            autocomplete="name"
-            required
-            aria-describedby="naam-fout"
-          />
-          <p class="foutmelding" id="naam-fout"></p>
-        </div>
-
-        <div class="veld">
-          <label for="email">E-mailadres: </label>
-          <input
-            type="email"
-            id="email"
-            name="email"
-            autocomplete="email"
-            required
-            aria-describedby="email-fout"
-          />
-          <p class="foutmelding" id="email-fout"></p>
-        </div>
-
-        <div class="veld">
-          <label for="bericht">Bericht: </label>
-          <p class="hint" id="bericht-hint">Minimaal 20 tekens.</p>
-          <textarea
-            id="bericht"
-            name="bericht"
-            rows="6"
-            required
-            aria-describedby="bericht-hint bericht-fout"
-          ></textarea>
-          <p class="foutmelding" id="bericht-fout"></p>
-        </div>
-
-        <button type="submit">Versturen</button>
-
-        <p class="bevestiging" id="bevestiging" role="status"></p>
-      </form>
-    </section>
 
     <footer>
       <p>© 2026 Tine Siu</p>
