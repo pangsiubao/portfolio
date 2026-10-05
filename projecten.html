@@ -12,6 +12,10 @@
     />
     <link rel="stylesheet" href="css/style.css" />
     <link rel="stylesheet" href="css/kaart.css" />
+    <link
+      rel="icon"
+      href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><style>text{fill:black}@media (prefers-color-scheme:dark){text{fill:white}}</style><text x='50' y='50' font-size='70' font-family='monospace' font-weight='bold' text-anchor='middle' dominant-baseline='central'>:)</text></svg>"
+    />
     <script src="js/projecten.js" defer></script>
   </head>
   <body>
@@ -23,6 +27,7 @@
           <li><a href="index.html">Wie ben ik</a></li>
           <li><a href="projecten.html" aria-current="page">Projecten</a></li>
           <li><a href="blogs.html">Blogs</a></li>
+          <li><a href="contact.html">Contact</a></li>
         </ul>
       </nav>
     </header>
@@ -33,13 +38,13 @@
       </section>
 
       <section class="section" aria-label="Projectenoverzicht">
-        <label class="container sorteren">
-          Sorteer op datum
+        <div class="container sorteren">
+          <label for="sorteer">Sorteer op datum</label>
           <select id="sorteer">
             <option value="nieuw">Nieuwste eerst</option>
             <option value="oud">Oudste eerst</option>
           </select>
-        </label>
+        </div>
         <p id="status" class="container status" role="status">
           Projecten laden…
         </p>

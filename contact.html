@@ -1,0 +1,92 @@
+<!doctype html>
+<html lang="nl">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Tine Siu | Contact</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Anonymous+Pro:wght@700&family=Inter:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="css/style.css" />
+    <link rel="stylesheet" href="css/contact.css" />
+    <link
+      rel="icon"
+      href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><style>text{fill:black}@media (prefers-color-scheme:dark){text{fill:white}}</style><text x='50' y='50' font-size='70' font-family='monospace' font-weight='bold' text-anchor='middle' dominant-baseline='central'>:)</text></svg>"
+    />
+    <script src="js/contact.js" defer></script>
+  </head>
+  <body>
+    <header>
+      <a href="index.html" class="logo">Tine Siu</a>
+
+      <nav class="nav-bar" aria-label="Hoofdmenu">
+        <ul>
+          <li><a href="index.html">Wie ben ik</a></li>
+          <li><a href="projecten.html">Projecten</a></li>
+          <li><a href="blogs.html">Blogs</a></li>
+          <li><a href="contact.html" aria-current="page">Contact</a></li>
+        </ul>
+      </nav>
+    </header>
+
+    <main>
+      <section class="hero">
+        <h1>Contact</h1>
+      </section>
+    </main>
+
+    <section class="section" aria-label="Contactformulier">
+      <form class="container formulier" id="contactformulier" novalidate>
+        <div class="veld">
+          <label for="naam">Naam: </label>
+          <input
+            type="text"
+            id="naam"
+            name="naam"
+            autocomplete="name"
+            required
+            aria-describedby="naam-fout"
+          />
+          <p class="foutmelding" id="naam-fout"></p>
+        </div>
+
+        <div class="veld">
+          <label for="email">E-mailadres: </label>
+          <input
+            type="email"
+            id="email"
+            name="email"
+            autocomplete="email"
+            required
+            aria-describedby="email-fout"
+          />
+          <p class="foutmelding" id="email-fout"></p>
+        </div>
+
+        <div class="veld">
+          <label for="bericht">Bericht: </label>
+          <p class="hint" id="bericht-hint">Minimaal 20 tekens.</p>
+          <textarea
+            id="bericht"
+            name="bericht"
+            rows="6"
+            required
+            aria-describedby="bericht-hint bericht-fout"
+          ></textarea>
+          <p class="foutmelding" id="bericht-fout"></p>
+        </div>
+
+        <button type="submit">Versturen</button>
+
+        <p class="bevestiging" id="bevestiging" role="status"></p>
+      </form>
+    </section>
+
+    <footer>
+      <p>© 2026 Tine Siu</p>
+    </footer>
+  </body>
+</html>
