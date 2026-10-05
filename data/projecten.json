@@ -1,0 +1,38 @@
+[
+  {
+    "id": 1,
+    "titel": "Dummy project 1",
+    "beschrijving": "Een webapp in C# waarmee teams taken verdelen en deadlines bijhouden.",
+    "taal": "C#",
+    "jaar": 2025
+  },
+  {
+    "id": 2,
+    "titel": "Portfolio Website",
+    "beschrijving": "Een persoonlijke portfolio website gebouwd met HTML, CSS en JavaScript.",
+    "taal": "JavaScript",
+    "jaar": 2026
+  },
+  {
+    "id": 3,
+    "titel": "E-commerce Platform",
+    "beschrijving": "Een volledig functioneel e-commerce platform met winkelwagen en betalingsintegratie.",
+    "taal": "Python",
+    "jaar": 2023
+  },
+  {
+    "id": 4,
+    "titel": "Mobile Game",
+    "beschrijving": "Een mobiele game ontwikkeld met Unity en C#.",
+    "taal": "C#",
+    "jaar": 2024
+  },
+  {
+    "id": 5,
+    "titel": "Data Analysis Tool",
+    "beschrijving": "Een tool voor het analyseren van grote datasets met behulp van Python en Pandas.",
+    "taal": "Python",
+    "jaar": 2022
+  }
+
+]

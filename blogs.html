@@ -11,6 +11,12 @@
       rel="stylesheet"
     />
     <link rel="stylesheet" href="css/style.css" />
+    <link rel="stylesheet" href="css/kaart.css" />
+    <script src="js/blogs.js" defer></script>
+    <link
+      rel="icon"
+      href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><style>text{fill:black}@media (prefers-color-scheme:dark){text{fill:white}}</style><text x='50' y='50' font-size='70' font-family='monospace' font-weight='bold' text-anchor='middle' dominant-baseline='central'>:)</text></svg>"
+    />
   </head>
   <body>
     <header>
@@ -21,6 +27,7 @@
           <li><a href="index.html">Wie ben ik</a></li>
           <li><a href="projecten.html">Projecten</a></li>
           <li><a href="blogs.html" aria-current="page">Blogs</a></li>
+          <li><a href="contact.html">Contact</a></li>
         </ul>
       </nav>
     </header>
@@ -31,60 +38,22 @@
       </section>
 
       <section class="section section--gray" aria-label="Blogoverzicht">
-        <div class="container card-grid">
-          <article class="card">
-            <h2>Leren programmeren</h2>
-            <p>
-              Wat ik had willen weten toen ik begon: kies één taal, bouw kleine
-              dingen en durf je code te laten zien.
-            </p>
-          </article>
-
-          <article class="card card--dark">
-            <h2>Python of C#?</h2>
-            <p>
-              Twee talen die ik allebei gebruik, en waarom ik per project een
-              andere keuze maak.
-            </p>
-          </article>
-
-          <article class="card card--dark">
-            <h2>Mijn eerste website</h2>
-            <p>
-              Hoe ik deze portfolio bouwde met alleen HTML en CSS, en welke
-              fouten ik onderweg maakte.
-            </p>
-          </article>
-
-          <article class="card card--white">
-            <h2>Code schoon houden</h2>
-            <p>
-              Drie gewoontes waardoor mijn projecten ook na maanden nog te
-              begrijpen zijn.
-            </p>
-          </article>
-
-          <article class="card card--white">
-            <h2>Test Project 1</h2>
-            <p>
-              Dit is alleen puur voor demonstratie van mijn projecten pagina.
-            </p>
-          </article>
-
-          <article class="card card--dark">
-            <h2>Test Project 2</h2>
-            <p>
-              Dit is alleen puur voor demonstratie van mijn projecten pagina.
-            </p>
-          </article>
+        <div class="container sorteren">
+          <label for="sorteer">Sorteer op datum</label>
+          <select id="sorteer">
+            <option value="nieuw">Nieuwste eerst</option>
+            <option value="oud">Oudste eerst</option>
+          </select>
         </div>
+        <p id="status" class="container status" role="status">
+          Blogs laden…
+        </p>
+        <ul class="container card-grid" id="blogs-lijst"></ul>
       </section>
     </main>
 
     <footer>
-      <div>
-        <p>© 2026 Tine Siu</p>
-      </div>
+      <p>© 2026 Tine Siu</p>
     </footer>
   </body>
 </html>

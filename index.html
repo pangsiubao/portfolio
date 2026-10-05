@@ -11,6 +11,12 @@
       rel="stylesheet"
     />
     <link rel="stylesheet" href="css/style.css" />
+    <link rel="stylesheet" href="css/weer.css" />
+    <script src="js/weer.js" defer></script>
+    <link
+      rel="icon"
+      href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><style>text{fill:black}@media (prefers-color-scheme:dark){text{fill:white}}</style><text x='50' y='50' font-size='70' font-family='monospace' font-weight='bold' text-anchor='middle' dominant-baseline='central'>:)</text></svg>"
+    />
   </head>
   <body>
     <header>
@@ -21,32 +27,43 @@
           <li><a href="index.html" aria-current="page">Wie ben ik</a></li>
           <li><a href="projecten.html">Projecten</a></li>
           <li><a href="blogs.html">Blogs</a></li>
+          <li><a href="contact.html">Contact</a></li>
         </ul>
       </nav>
     </header>
 
     <main>
-      <section class="about" aria-labelledby="about-heading">
+      <section class="hero">
+        <h1>Wie ben ik</h1>
+      </section>
+      <section class="about" aria-label="Over mij">
         <div class="container about__inner">
-          <div class="about__text">
-            <h1 id="about-heading">Over mij</h1>
-            <p>
-              Ik ben Tine, een software developer uit Den Haag met een liefde
-              voor overzichtelijke code en doordachte interfaces. Ik begon met
-              het bouwen van kleine tools in Python en werk inmiddels ook met C#
-              en JavaScript. Als ik niet aan het programmeren ben, fiets ik
-              graag langs het strand of probeer ik nieuwe recepten uit.
-            </p>
-          </div>
+          <p class="about__text">
+            Ik ben Tine, een software developer uit Den Haag met een liefde voor
+            overzichtelijke code en doordachte interfaces. Ik begon met het
+            bouwen van kleine tools in Python en werk inmiddels ook met C# en
+            JavaScript. Als ik niet aan het programmeren ben, fiets ik graag
+            langs het strand of probeer ik nieuwe recepten uit.
+          </p>
 
-          <div class="about__photo">
-            <img
-              src="assets/profielfoto.jpg"
-              alt="Foto van Tine Siu"
-              width="257"
-              height="289"
-            />
-          </div>
+          <img
+            class="about__photo"
+            src="assets/profielfoto.jpg"
+            alt="Foto van Tine Siu"
+            width="257"
+            height="289"
+          />
+        </div>
+      </section>
+
+      <section class="section weer" aria-labelledby="weer-titel">
+        <div class="container">
+          <h2 id="weer-titel">Het weer in Den Haag</h2>
+          <p class="weer__text">
+            Hier wordt het weer opgehaald om te kijken of ik kan fietsen.
+          </p>
+          <p id="weer-status" role="status">Weer laden…</p>
+          <div class="weer__info" id="weer-info"></div>
         </div>
       </section>
     </main>

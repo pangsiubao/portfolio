@@ -1,0 +1,75 @@
+.formulier {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  max-width: 600px;
+}
+
+.veld {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.veld label {
+  font-weight: 700;
+}
+
+.veld input,
+.veld textarea {
+  padding: 10px 12px;
+  border: 1px solid var(--color-dark);
+  border-radius: 4px;
+  font: inherit;
+}
+
+.veld input:focus-visible,
+.veld textarea:focus-visible {
+  outline: 2px solid var(--color-dark);
+  outline-offset: 2px;
+}
+
+/* Meldingen */
+
+.hint,
+.foutmelding {
+  margin: 0;
+  font-size: 0.875rem;
+}
+
+.hint {
+  color: #555555;
+}
+
+.foutmelding {
+  color: #b00020;
+}
+
+.veld [aria-invalid="true"] {
+  border: 2px solid #b00020;
+}
+
+.bevestiging {
+  margin: 0;
+  font-weight: 700;
+}
+
+/* Knop */
+
+.formulier button {
+  align-self: flex-start;
+  padding: 12px 28px;
+  border: none;
+  border-radius: 4px;
+  font: inherit;
+  font-weight: 700;
+  background-color: var(--color-dark);
+  color: var(--color-white);
+  cursor: pointer;
+}
+
+.formulier button:hover,
+.formulier button:focus-visible {
+  outline: 2px solid var(--color-dark);
+  outline-offset: 2px;
+}

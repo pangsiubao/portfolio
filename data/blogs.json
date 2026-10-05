@@ -1,0 +1,26 @@
+[
+  {
+    "id": 1,
+    "titel": "Leren programmeren",
+    "beschrijving": "Wat ik had willen weten toen ik begon: kies één taal, bouw kleine dingen en durf je code te laten zien.",
+    "datum": "2025-09-12"
+  },
+  {
+    "id": 2,
+    "titel": "Python of C#?",
+    "beschrijving": "Twee talen die ik allebei gebruik, en waarom ik per project een andere keuze maak.",
+    "datum": "2025-11-03"
+  },
+  {
+    "id": 3,
+    "titel": "Mijn eerste website",
+    "beschrijving": "Hoe ik deze portfolio bouwde met alleen HTML en CSS, en welke fouten ik onderweg maakte.",
+    "datum": "2026-02-20"
+  },
+  {
+    "id": 4,
+    "titel": "Code schoon houden",
+    "beschrijving": "Drie gewoontes waardoor mijn projecten ook na maanden nog te begrijpen zijn.",
+    "datum": "2026-05-08"
+  }
+]
