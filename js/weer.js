@@ -2,6 +2,7 @@ const weerStatus = document.querySelector("#weer-status");
 const weerInfo = document.querySelector("#weer-info");
 const weerFormulier = document.querySelector("#weer-formulier");
 const stadVeld = document.querySelector("#stad");
+const stadFout = document.querySelector("#stad-fout");
 
 const toonStadFout = (melding) => {
   stadFout.textContent = melding;
@@ -106,7 +107,9 @@ const laadWeer = (naam) => {
     .catch((fout) => {
       console.error("Weer laden mislukt:", fout);
       if (fout.message === "Stad niet gevonden") {
-        weerStatus.textContent = `De stad "${naam}" is niet gevonden. Controleer de spelling.`;
+        weerStatus.textContent = "";
+        toonStadFout(`De stad "${naam}" is niet gevonden. Controleer de spelling.`);
+        stadVeld.focus();
       } else {
         weerStatus.textContent =
           "Het weer kon niet worden geladen. Probeer het later opnieuw.";
@@ -120,12 +123,13 @@ const verwerkZoekopdracht = (event) => {
 
   if (naam === "") {
     weerInfo.innerHTML = "";
-    weerStatus.textContent = "Vul een stad in.";
+    weerStatus.textContent = "";
+    toonStadFout("Vul een stad in.");
     stadVeld.focus();
     return;
   }
-  
-  toonstadFout("");
+
+  toonStadFout("");
   laadWeer(naam);
 };
 
