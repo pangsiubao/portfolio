@@ -35,96 +35,18 @@
         <h1>Blogs</h1>
       </section>
 
-      <section class="section section--gray" aria-label="Blogoverzicht">
-        <div class="container card-grid">
-          <article class="card">
-            <h2>Leren programmeren</h2>
-            <p>
-              Wat ik had willen weten toen ik begon: kies één taal, bouw kleine
-              dingen en durf je code te laten zien.
-            </p>
-            <p class="blog-meer" hidden>
-              In dit blog deel ik mijn ervaringen met leren programmeren. Ik
-              vertel over de eerste stappen die ik zette, de uitdagingen die ik
-              tegenkwam en de lessen die ik leerde. Hopelijk kan mijn verhaal
-              anderen inspireren en helpen bij hun eigen leerproces.
-            </p>
-            <button type="button" class="meer-knop" aria-expanded="false">
-              Lees meer
-            </button>
-          </article>
-
-          <article class="card">
-            <h2>Python of C#?</h2>
-            <p>
-              Twee talen die ik allebei gebruik, en waarom ik per project een
-              andere keuze maak.
-            </p>
-            <p class="blog-meer" hidden>
-              In dit blog deel ik mijn ervaringen met het kiezen tussen Python
-              en C#. Ik bespreek de voordelen en nadelen van beide talen en hoe
-              ik mijn keuze bepaal.
-            </p>
-            <button type="button" class="meer-knop" aria-expanded="false">
-              Lees meer
-            </button>
-          </article>
-
-          <article class="card">
-            <h2>Mijn eerste website</h2>
-            <p>
-              Hoe ik deze portfolio bouwde met alleen HTML en CSS, en welke
-              fouten ik onderweg maakte.
-            </p>
-            <p class="blog-meer" hidden>
-              In dit blog deel ik mijn ervaringen met het bouwen van mijn eerste
-              website. Ik vertel over de uitdagingen die ik tegenkwam, de lessen
-              die ik leerde en de tips die ik zou geven aan anderen die net
-              beginnen.
-            </p>
-            <button type="button" class="meer-knop" aria-expanded="false">
-              Lees meer
-            </button>
-          </article>
-
-          <article class="card">
-            <h2>Code schoon houden</h2>
-            <p>
-              Drie gewoontes waardoor mijn projecten ook na maanden nog te
-              begrijpen zijn.
-            </p>
-            <p class="blog-meer" hidden>
-              In dit blog deel ik mijn ervaringen met het onderhouden van schoon
-              code. Ik bespreek drie gewoontes die mij helpen om mijn projecten
-              ook na maanden nog leesbaar en onderhoudbaar te houden.
-            </p>
-            <button type="button" class="meer-knop" aria-expanded="false">
-              Lees meer
-            </button>
-          </article>
-
-          <article class="card">
-            <h2>Test Blog 1</h2>
-            <p>Dit is alleen puur voor demonstratie van mijn blogs pagina.</p>
-            <p class="blog-meer" hidden>
-              Dit is een test blog voor demonstratie van mijn blogs pagina.
-            </p>
-            <button type="button" class="meer-knop" aria-expanded="false">
-              Lees meer
-            </button>
-          </article>
-
-          <article class="card">
-            <h2>Test Blog 2</h2>
-            <p>Dit is alleen puur voor demonstratie van mijn blogs pagina.</p>
-            <p class="blog-meer" hidden>
-              Dit is een test blog voor demonstratie van mijn blogs pagina.
-            </p>
-            <button type="button" class="meer-knop" aria-expanded="false">
-              Lees meer
-            </button>
-          </article>
+      <section class="section" aria-label="Blogoverzicht">
+        <div class="container sorteren">
+          <label for="sorteer">Sorteer op datum</label>
+          <select id="sorteer">
+            <option value="nieuw">Nieuwste eerst</option>
+            <option value="oud">Oudste eerst</option>
+          </select>
         </div>
+        <p id="status" class="container status" id="blogs-lijst">
+          Blogs laden…
+        </p>
+        <ul class="container card-grid" id="blogs-lijst"></ul>
       </section>
     </main>
 
