@@ -1,5 +1,4 @@
 /* Kaartenraster */
-
 .card-grid {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
@@ -13,7 +12,6 @@
 }
 
 /* Kaart */
-
 .card {
   display: flex;
   flex-direction: column;
@@ -42,7 +40,6 @@
 }
 
 /* Sorteren en status projecten */
-
 .sorteren {
   display: flex;
   align-items: center;
@@ -70,6 +67,30 @@
 
 .status:not(:empty) {
   margin-bottom: 24px;
+}
+
+/* Blog */
+.card p + p {
+  margin-top: 12px;
+}
+
+.meer-knop {
+  align-self: center;
+  margin-top: 16px;
+  padding: 8px 16px;
+  border: 1px solid var(--color-dark);
+  border-radius: 4px;
+  font: inherit;
+  font-size: 0.875rem;
+  background-color: transparent;
+  color: var(--color-dark);
+  cursor: pointer;
+}
+
+.meer-knop:hover,
+.meer-knop:focus-visible {
+  outline: 2px solid var(--color-dark);
+  outline-offset: 2px;
 }
 
 /* Mobiel */
