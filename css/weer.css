@@ -1,26 +1,66 @@
+/* Weerblok */
+
 .weer {
   text-align: center;
 }
 
 .weer h2 {
-  margin: 0 0 16px;
-  font-size: 1.5rem;
-  text-transform: uppercase;
-}
-
-.weer p {
-  margin: 0;
-}
-
-.weer .weer__text {
   margin-bottom: 16px;
 }
+
+.weer__text {
+  margin-bottom: 16px;
+}
+
+/* Zoekformulier */
+
+.weer__zoek {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 24px;
+}
+
+.weer__zoek input,
+.weer__zoek button {
+  padding: 8px 12px;
+  border: 1px solid var(--color-dark);
+  border-radius: 4px;
+  font: inherit;
+}
+
+.weer__zoek button {
+  font-weight: 700;
+  background-color: var(--color-dark);
+  color: var(--color-white);
+  cursor: pointer;
+}
+
+.weer__zoek input[aria-invalid="true"] {
+  border: 2px solid var(--color-error);
+}
+
+.weer .foutmelding {
+  margin-bottom: 16px;
+}
+
+.weer .foutmelding:empty {
+  margin-bottom: 0;
+}
+
+/* Weerbericht */
 
 .weer__info {
   display: flex;
   flex-direction: column;
   align-items: center;
   gap: 4px;
+}
+
+.weer__stad {
+  font-weight: 700;
 }
 
 .weer__temperatuur {
@@ -30,5 +70,5 @@
 
 .weer__tijd {
   font-size: 0.875rem;
-  color: #555555;
+  color: var(--color-muted);
 }

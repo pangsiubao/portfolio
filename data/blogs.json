@@ -3,24 +3,42 @@
     "id": 1,
     "titel": "Leren programmeren",
     "beschrijving": "Wat ik had willen weten toen ik begon: kies één taal, bouw kleine dingen en durf je code te laten zien.",
-    "datum": "2025-09-12"
+    "meer": "In dit blog deel ik mijn ervaringen met leren programmeren. Ik vertel over de eerste stappen die ik zette, de uitdagingen die ik tegenkwam en de lessen die ik leerde. Hopelijk kan mijn verhaal anderen inspireren en helpen bij hun eigen leerproces.",
+    "jaar": 2025
   },
   {
     "id": 2,
     "titel": "Python of C#?",
     "beschrijving": "Twee talen die ik allebei gebruik, en waarom ik per project een andere keuze maak.",
-    "datum": "2025-11-03"
+    "meer": "In dit blog deel ik mijn ervaringen met het kiezen tussen Python en C#. Ik bespreek de voordelen en nadelen van beide talen en hoe ik mijn keuze bepaal.",
+    "jaar": 2025
   },
   {
     "id": 3,
     "titel": "Mijn eerste website",
     "beschrijving": "Hoe ik deze portfolio bouwde met alleen HTML en CSS, en welke fouten ik onderweg maakte.",
-    "datum": "2026-02-20"
+    "meer": "In dit blog deel ik mijn ervaringen met het bouwen van mijn eerste website. Ik vertel over de uitdagingen die ik tegenkwam, de lessen die ik leerde en de tips die ik zou geven aan anderen die net beginnen.",
+    "jaar": 2026
   },
   {
     "id": 4,
     "titel": "Code schoon houden",
     "beschrijving": "Drie gewoontes waardoor mijn projecten ook na maanden nog te begrijpen zijn.",
-    "datum": "2026-05-08"
+    "meer": "In dit blog deel ik mijn ervaringen met het onderhouden van schoon code. Ik bespreek drie gewoontes die mij helpen om mijn projecten ook na maanden nog leesbaar en onderhoudbaar te houden.",
+    "jaar": 2026
+  },
+  {
+    "id": 5,
+    "titel": "De kracht van kleine projecten",
+    "beschrijving": "Waarom ik liever kleine projecten bouw dan grote, en wat ik daarvan leer.",
+    "meer": "In dit blog deel ik mijn ervaringen met het bouwen van kleine projecten. Ik bespreek de voordelen van kleine projecten, de lessen die ik leerde en hoe ze mijn vaardigheden als ontwikkelaar hebben verbeterd.",
+    "jaar": 2024
+  },
+  {
+    "id": 6,
+    "titel": "Samenwerken in code",
+    "beschrijving": "Hoe ik leerde samenwerken met andere ontwikkelaars, en welke tools daarbij helpen.",
+    "meer": "In dit blog deel ik mijn ervaringen met het samenwerken in code. Ik bespreek de uitdagingen die ik tegenkwam, de tools die ik gebruikte en de lessen die ik leerde over effectief samenwerken.",
+    "jaar": 2025
   }
 ]

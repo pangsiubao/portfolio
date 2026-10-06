@@ -11,10 +11,12 @@
       rel="stylesheet"
     />
     <link rel="stylesheet" href="css/style.css" />
+    <link rel="stylesheet" href="css/over-mij.css" />
     <link rel="stylesheet" href="css/weer.css" />
     <script src="js/weer.js" defer></script>
     <link rel="icon" href="assets/favicon.svg" type="image/svg+xml" />
   </head>
+
   <body>
     <header>
       <a href="index.html" class="logo">Tine Siu</a>
@@ -55,11 +57,25 @@
 
       <section class="section weer" aria-labelledby="weer-titel">
         <div class="container">
-          <h2 id="weer-titel">Het weer in Den Haag</h2>
+          <h2 id="weer-titel">Het weer</h2>
           <p class="weer__text">
-            Hier wordt het weer opgehaald om te kijken of ik kan fietsen.
+            Vul hier je stad in om te kijken of het weer geschikt is om te
+            fietsen.
           </p>
-          <p id="weer-status" role="status">Weer laden…</p>
+          <form class="weer__zoek" id="weer-formulier">
+            <label for="stad">Stad</label>
+            <input
+              type="text"
+              id="stad"
+              name="stad"
+              placeholder="Bijv. Amsterdam"
+              autocomplete="address-level2"
+              aria-describedby="stad-fout"
+            />
+            <button type="submit">Toon weer</button>
+          </form>
+          <p class="foutmelding" id="stad-fout"></p>
+          <p id="weer-status" role="status"></p>
           <div class="weer__info" id="weer-info"></div>
         </div>
       </section>

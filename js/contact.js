@@ -7,8 +7,13 @@ const bevestiging = document.querySelector("#bevestiging");
 const minimaleLengte = 20;
 
 const controleerNaam = (naam) => {
+  const naamPatroon = /^[\p{L} '-]+$/u;
+
   if (naam.trim() === "") {
     return "Vul je naam in.";
+  }
+  if (!naamPatroon.test(naam.trim())) {
+    return "Een naam mag alleen letters, spaties, koppeltekens (-) en apostrofs (') bevatten.";
   }
   return "";
 };

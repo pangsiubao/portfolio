@@ -1,0 +1,50 @@
+/* Over mij */
+
+.about {
+  background-color: var(--color-gray);
+  padding-block: 84px;
+}
+
+.about__inner {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 80px;
+}
+
+.about__text {
+  flex: 0 1 400px;
+  font-size: 1.125rem;
+  line-height: 1.25;
+}
+
+.about__photo {
+  flex: 0 0 257px;
+  height: auto;
+  aspect-ratio: 8 / 9;
+  object-fit: cover;
+}
+
+/* Mobiel */
+
+@media (max-width: 768px) {
+  .about {
+    padding-block: 40px;
+  }
+
+  .about__inner {
+    flex-direction: column-reverse;
+    gap: 32px;
+  }
+
+  .about__text,
+  .about__photo {
+    flex: none;
+    width: 100%;
+  }
+
+  .about__photo {
+    max-width: 257px;
+    margin-inline: auto;
+  }
+}
