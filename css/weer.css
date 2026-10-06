@@ -32,3 +32,37 @@
   font-size: 0.875rem;
   color: #555555;
 }
+
+.weer__zoek {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 24px;
+}
+
+.weer__zoek input,
+.weer__zoek button {
+  padding: 8px 12px;
+  border: 1px solid var(--color-dark);
+  border-radius: 4px;
+  font: inherit;
+}
+
+.weer__zoek button {
+  font-weight: 700;
+  background-color: var(--color-dark);
+  color: var(--color-white);
+  cursor: pointer;
+}
+
+.weer__zoek input:focus-visible,
+.weer__zoek button:focus-visible {
+  outline: 2px solid var(--color-dark);
+  outline-offset: 2px;
+}
+
+.weer__stad {
+  font-weight: 700;
+}

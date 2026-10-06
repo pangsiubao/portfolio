@@ -1,8 +1,36 @@
 const weerStatus = document.querySelector("#weer-status");
 const weerInfo = document.querySelector("#weer-info");
+const weerFormulier = document.querySelector("#weer-formulier");
+const stadVeld = document.querySelector("#stad");
 
-const weerUrl =
-  "https://api.open-meteo.com/v1/forecast?latitude=52.08&longitude=4.30&current=temperature_2m,weather_code&timezone=Europe%2FAmsterdam";
+const zoekStad = (naam) => {
+  const url = `https://geocoding-api.open-meteo.com/v1/search?name=${encodeURIComponent(naam)}&count=1&language=nl`;
+
+  return fetch(url)
+    .then((response) => {
+      if (!response.ok) {
+        throw new Error("Geocoding-API gaf een fout");
+      }
+      return response.json();
+    })
+    .then((data) => {
+      if (!data.results) {
+        throw new Error("Stad niet gevonden");
+      }
+      return data.results[0];
+    });
+};
+
+const haalWeerOp = (stad) => {
+  const url = `https://api.open-meteo.com/v1/forecast?latitude=${stad.latitude}&longitude=${stad.longitude}&current=temperature_2m,weather_code&timezone=auto`;
+
+  return fetch(url).then((response) => {
+    if (!response.ok) {
+      throw new Error("Weer-API gaf een fout");
+    }
+    return response.json();
+  });
+};
 
 const beschrijfWeer = (code) => {
   if (code === 0) {
@@ -28,7 +56,11 @@ const beschrijfWeer = (code) => {
   }
 };
 
-const toonWeer = (weer) => {
+const toonWeer = (weer, stad) => {
+  const plaats = document.createElement("p");
+  plaats.classList.add("weer__stad");
+  plaats.textContent = `${stad.name}, ${stad.country}`;
+
   const temperatuur = document.createElement("p");
   temperatuur.classList.add("weer__temperatuur");
   temperatuur.textContent = `${Math.round(weer.temperature_2m)} °C`;
@@ -42,28 +74,49 @@ const toonWeer = (weer) => {
 
   const bijgewerkt = document.createElement("p");
   bijgewerkt.classList.add("weer__tijd");
-  bijgewerkt.append("Bijgewerkt om ", tijd);
+  bijgewerkt.append("Bijgewerkt om ", tijd, " (lokale tijd)");
 
-  weerInfo.append(temperatuur, omschrijving, bijgewerkt);
+  weerInfo.append(plaats, temperatuur, omschrijving, bijgewerkt);
 };
 
-const laadWeer = () => {
-  fetch(weerUrl)
-    .then((response) => {
-      if (!response.ok) {
-        throw new Error("Weer-API gaf een fout");
-      }
-      return response.json();
+const laadWeer = (naam) => {
+  weerInfo.innerHTML = "";
+  weerStatus.textContent = "Weer laden…";
+
+  let gevondenStad;
+
+  zoekStad(naam)
+    .then((stad) => {
+      gevondenStad = stad;
+      return haalWeerOp(stad);
     })
     .then((data) => {
       weerStatus.textContent = "";
-      toonWeer(data.current);
+      toonWeer(data.current, gevondenStad);
     })
     .catch((fout) => {
       console.error("Weer laden mislukt:", fout);
-      weerStatus.textContent =
-        "Het weer kon niet worden geladen. Probeer het later opnieuw.";
+      if (fout.message === "Stad niet gevonden") {
+        weerStatus.textContent = `De stad "${naam}" is niet gevonden. Controleer de spelling.`;
+      } else {
+        weerStatus.textContent =
+          "Het weer kon niet worden geladen. Probeer het later opnieuw.";
+      }
     });
 };
 
-laadWeer();
+const verwerkZoekopdracht = (event) => {
+  event.preventDefault();
+  const naam = stadVeld.value.trim();
+
+  if (naam === "") {
+    weerInfo.innerHTML = "";
+    weerStatus.textContent = "Vul een stad in.";
+    stadVeld.focus();
+    return;
+  }
+  laadWeer(naam);
+};
+
+weerFormulier.addEventListener("submit", verwerkZoekopdracht);
+laadWeer("Den Haag");

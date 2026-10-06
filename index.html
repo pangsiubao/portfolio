@@ -56,10 +56,21 @@
 
       <section class="section weer" aria-labelledby="weer-titel">
         <div class="container">
-          <h2 id="weer-titel">Het weer in Den Haag</h2>
+          <h2 id="weer-titel">Het weer</h2>
           <p class="weer__text">
-            Hier wordt het weer opgehaald om te kijken of ik kan fietsen.
+            Vul hier uw stad in om te kijken of het weer geschikt is om te fietsen.
           </p>
+          <form class="weer__zoek" id="weer-formulier">
+            <label for="stad">Stad</label>
+            <input
+              type="text"
+              id="stad"
+              name="stad"
+              value=""
+              autocomplete="address-level2"
+            />
+            <button type="submit">Toon weer</button>
+          </form>
           <p id="weer-status" role="status">Weer laden…</p>
           <div class="weer__info" id="weer-info"></div>
         </div>
