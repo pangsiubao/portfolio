@@ -66,3 +66,17 @@
 .weer__stad {
   font-weight: 700;
 }
+
+.weer .foutmelding {
+  margin-bottom: 16px;
+  font-size: 0.875rem;
+  color: #b00020;
+}
+
+.weer .foutmelding:empty {
+  margin-bottom: 0;
+}
+
+.weer__zoek input[aria-invalid="true"] {
+  border: 2px solid #b00020;
+}

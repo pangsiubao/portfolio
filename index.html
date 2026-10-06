@@ -67,11 +67,13 @@
               type="text"
               id="stad"
               name="stad"
-              placeholder="Bijvoorbeeld: Den Haag"
+              placeholder="Bijv. Amsterdam"
               autocomplete="address-level2"
+              aria-describedby="stad-fout"
             />
             <button type="submit">Toon weer</button>
           </form>
+          <p class="foutmelding" id="stad-fout"></p>
           <p id="weer-status" role="status"></p>
           <div class="weer__info" id="weer-info"></div>
         </div>

@@ -3,6 +3,15 @@ const weerInfo = document.querySelector("#weer-info");
 const weerFormulier = document.querySelector("#weer-formulier");
 const stadVeld = document.querySelector("#stad");
 
+const toonStadFout = (melding) => {
+  stadFout.textContent = melding;
+  if (melding === "") {
+    stadVeld.removeAttribute("aria-invalid");
+  } else {
+    stadVeld.setAttribute("aria-invalid", "true");
+  }
+};
+
 const zoekStad = (naam) => {
   const url = `https://geocoding-api.open-meteo.com/v1/search?name=${encodeURIComponent(naam)}&count=1&language=nl`;
 
@@ -115,6 +124,8 @@ const verwerkZoekopdracht = (event) => {
     stadVeld.focus();
     return;
   }
+  
+  toonstadFout("");
   laadWeer(naam);
 };
 
