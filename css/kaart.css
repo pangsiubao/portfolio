@@ -1,3 +1,5 @@
+/* Kaartenraster */
+
 .card-grid {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
@@ -10,6 +12,8 @@
   display: grid;
 }
 
+/* Kaart */
+
 .card {
   display: flex;
   flex-direction: column;
@@ -21,21 +25,44 @@
 }
 
 .card h2 {
-  margin: 0 0 12px;
-  font-size: 1.5rem;
-  text-transform: uppercase;
+  margin-bottom: 12px;
 }
 
 .card p {
-  margin: 0;
   font-size: 1rem;
   line-height: 1.5;
 }
 
+.card p + p {
+  margin-top: 12px;
+}
+
 .card-meta {
   margin-top: 16px;
-  font-size: 0.8rem;
+  font-size: 0.875rem;
 }
+
+/* Lees meer */
+
+.meer-knop {
+  align-self: center;
+  margin-top: 16px;
+  padding: 8px 16px;
+  border: 1px solid var(--color-dark);
+  border-radius: 4px;
+  font: inherit;
+  font-size: 0.875rem;
+  background-color: transparent;
+  color: var(--color-dark);
+  cursor: pointer;
+}
+
+.meer-knop:hover {
+  outline: 2px solid var(--color-dark);
+  outline-offset: 2px;
+}
+
+/* Sorteren en status */
 
 .sorteren {
   display: flex;
@@ -53,41 +80,11 @@
   color: var(--color-dark);
 }
 
-.sorteren select:focus-visible {
-  outline: 2px solid var(--color-dark);
-  outline-offset: 2px;
-}
-
-.status {
-  margin-block: 0;
-}
-
 .status:not(:empty) {
   margin-bottom: 24px;
 }
 
-.card p + p {
-  margin-top: 12px;
-}
-
-.meer-knop {
-  align-self: center;
-  margin-top: 16px;
-  padding: 8px 16px;
-  border: 1px solid var(--color-dark);
-  border-radius: 4px;
-  font: inherit;
-  font-size: 0.875rem;
-  background-color: transparent;
-  color: var(--color-dark);
-  cursor: pointer;
-}
-
-.meer-knop:hover,
-.meer-knop:focus-visible {
-  outline: 2px solid var(--color-dark);
-  outline-offset: 2px;
-}
+/* Mobiel */
 
 @media (max-width: 768px) {
   .card-grid {

@@ -1,3 +1,5 @@
+/* Formulier */
+
 .formulier {
   display: flex;
   flex-direction: column;
@@ -23,34 +25,22 @@
   font: inherit;
 }
 
-.veld input:focus-visible,
-.veld textarea:focus-visible {
-  outline: 2px solid var(--color-dark);
-  outline-offset: 2px;
-}
-
-.hint,
-.foutmelding {
-  margin: 0;
-  font-size: 0.875rem;
-}
+/* Meldingen */
 
 .hint {
-  color: #555555;
-}
-
-.foutmelding {
-  color: #b00020;
+  font-size: 0.875rem;
+  color: var(--color-muted);
 }
 
 .veld [aria-invalid="true"] {
-  border: 3px solid #b00020;
+  border: 2px solid var(--color-error);
 }
 
 .bevestiging {
-  margin: 0;
   font-weight: 700;
 }
+
+/* Knop */
 
 .formulier button {
   align-self: flex-start;
@@ -64,8 +54,7 @@
   cursor: pointer;
 }
 
-.formulier button:hover,
-.formulier button:focus-visible {
+.formulier button:hover {
   outline: 2px solid var(--color-dark);
   outline-offset: 2px;
 }

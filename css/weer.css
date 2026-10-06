@@ -1,37 +1,18 @@
+/* Weerblok */
+
 .weer {
   text-align: center;
 }
 
 .weer h2 {
-  margin: 0 0 16px;
-  font-size: 1.5rem;
-  text-transform: uppercase;
-}
-
-.weer p {
-  margin: 0;
-}
-
-.weer .weer__text {
   margin-bottom: 16px;
 }
 
-.weer__info {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 4px;
+.weer__text {
+  margin-bottom: 16px;
 }
 
-.weer__temperatuur {
-  font-size: 2.5rem;
-  font-weight: 700;
-}
-
-.weer__tijd {
-  font-size: 0.875rem;
-  color: #555555;
-}
+/* Zoekformulier */
 
 .weer__zoek {
   display: flex;
@@ -57,26 +38,37 @@
   cursor: pointer;
 }
 
-.weer__zoek input:focus-visible,
-.weer__zoek button:focus-visible {
-  outline: 2px solid var(--color-dark);
-  outline-offset: 2px;
-}
-
-.weer__stad {
-  font-weight: 700;
+.weer__zoek input[aria-invalid="true"] {
+  border: 2px solid var(--color-error);
 }
 
 .weer .foutmelding {
   margin-bottom: 16px;
-  font-size: 0.875rem;
-  color: #b00020;
 }
 
 .weer .foutmelding:empty {
   margin-bottom: 0;
 }
 
-.weer__zoek input[aria-invalid="true"] {
-  border: 2px solid #b00020;
+/* Weerbericht */
+
+.weer__info {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 4px;
+}
+
+.weer__stad {
+  font-weight: 700;
+}
+
+.weer__temperatuur {
+  font-size: 2.5rem;
+  font-weight: 700;
+}
+
+.weer__tijd {
+  font-size: 0.875rem;
+  color: var(--color-muted);
 }
