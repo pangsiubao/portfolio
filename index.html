@@ -58,7 +58,8 @@
         <div class="container">
           <h2 id="weer-titel">Het weer</h2>
           <p class="weer__text">
-            Vul hier uw stad in om te kijken of het weer geschikt is om te fietsen.
+            Vul hier je stad in om te kijken of het weer geschikt is om te
+            fietsen.
           </p>
           <form class="weer__zoek" id="weer-formulier">
             <label for="stad">Stad</label>
@@ -66,12 +67,12 @@
               type="text"
               id="stad"
               name="stad"
-              value=""
+              placeholder="Bijvoorbeeld: Den Haag"
               autocomplete="address-level2"
             />
             <button type="submit">Toon weer</button>
           </form>
-          <p id="weer-status" role="status">Weer laden…</p>
+          <p id="weer-status" role="status"></p>
           <div class="weer__info" id="weer-info"></div>
         </div>
       </section>

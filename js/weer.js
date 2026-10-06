@@ -119,4 +119,3 @@ const verwerkZoekopdracht = (event) => {
 };
 
 weerFormulier.addEventListener("submit", verwerkZoekopdracht);
-laadWeer("Den Haag");

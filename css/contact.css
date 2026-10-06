@@ -29,8 +29,6 @@
   outline-offset: 2px;
 }
 
-/* Meldingen */
-
 .hint,
 .foutmelding {
   margin: 0;
@@ -46,15 +44,13 @@
 }
 
 .veld [aria-invalid="true"] {
-  border: 2px solid #b00020;
+  border: 3px solid #b00020;
 }
 
 .bevestiging {
   margin: 0;
   font-weight: 700;
 }
-
-/* Knop */
 
 .formulier button {
   align-self: flex-start;

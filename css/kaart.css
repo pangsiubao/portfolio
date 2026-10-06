@@ -1,4 +1,3 @@
-/* Kaartenraster */
 .card-grid {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
@@ -11,7 +10,6 @@
   display: grid;
 }
 
-/* Kaart */
 .card {
   display: flex;
   flex-direction: column;
@@ -39,7 +37,6 @@
   font-size: 0.8rem;
 }
 
-/* Sorteren en status projecten */
 .sorteren {
   display: flex;
   align-items: center;
@@ -69,7 +66,6 @@
   margin-bottom: 24px;
 }
 
-/* Blog */
 .card p + p {
   margin-top: 12px;
 }
@@ -92,8 +88,6 @@
   outline: 2px solid var(--color-dark);
   outline-offset: 2px;
 }
-
-/* Mobiel */
 
 @media (max-width: 768px) {
   .card-grid {

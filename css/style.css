@@ -6,7 +6,6 @@
   --color-dark: #1d1d1f;
 }
 
-/*  basis */
 
 * {
   box-sizing: border-box;
@@ -28,7 +27,6 @@ a:focus-visible {
   text-decoration: underline;
 }
 
-/* Header en navigatie */
 header {
   display: flex;
   justify-content: space-between;
@@ -59,7 +57,6 @@ header {
   font-weight: 700;
 }
 
-/* Layout */
 
 .container {
   max-width: 1400px;
@@ -75,7 +72,6 @@ header {
   background-color: var(--color-gray);
 }
 
-/* Hero */
 
 .hero {
   padding-block: 70px;
@@ -118,7 +114,6 @@ header {
   object-fit: cover;
 }
 
-/* Footer */
 
 body > footer {
   padding: 20px;
@@ -127,10 +122,8 @@ body > footer {
   font-size: 0.875rem;
 }
 
-/* Mobiel */
 
 @media (max-width: 768px) {
-  /* Header en navigatie */
   header {
     flex-direction: column;
     gap: 12px;
@@ -151,17 +144,14 @@ body > footer {
     gap: 12px 24px;
   }
 
-  /* Layout */
   .section {
     padding-block: 24px;
   }
 
-  /* Hero */
   .hero {
     padding-block: 56px;
   }
 
-  /* Over mij */
   .about {
     padding-block: 40px;
   }
