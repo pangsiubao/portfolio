@@ -4,6 +4,9 @@ builder.Services.AddControllers();
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 
+builder.Services.AddScoped<PortfolioApi.Services.ProjectService>();
+builder.Services.AddScoped<PortfolioApi.Services.BlogpostService>();
+
 var app = builder.Build();
 
 if (app.Environment.IsDevelopment())
