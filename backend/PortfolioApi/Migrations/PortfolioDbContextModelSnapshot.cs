@@ -124,11 +124,10 @@ namespace PortfolioApi.Migrations
                         new
                         {
                             Id = 1,
-                            Beschrijving = "Een persoonlijke portfolio website gebouwd met HTML, CSS en JavaScript.",
-                            Categorie = "JavaScript",
-                            Datum = new DateTime(2026, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            GitHubUrl = "https://github.com/pangsiubao/portfolio",
-                            Titel = "Portfolio Website"
+                            Beschrijving = "Een webapp in C# waarmee teams taken verdelen en deadlines bijhouden.",
+                            Categorie = "C#",
+                            Datum = new DateTime(2025, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            Titel = "Dummy project 1"
                         },
                         new
                         {

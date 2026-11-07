@@ -15,7 +15,7 @@ public class PortfolioDbContext : DbContext
     protected override void OnModelCreating(ModelBuilder modelBuilder)
     {
         modelBuilder.Entity<Project>().HasData(
-            new Project { Id = 1, Titel = "Portfolio Website", Beschrijving = "Een persoonlijke portfolio website gebouwd met HTML, CSS en JavaScript.", Categorie = "JavaScript", GitHubUrl = "https://github.com/pangsiubao/portfolio", Datum = new DateTime(2026, 1, 1) },
+            new Project { Id = 1, Titel = "Dummy project 1", Beschrijving = "Een webapp in C# waarmee teams taken verdelen en deadlines bijhouden.", Categorie = "C#", GitHubUrl = null, Datum = new DateTime(2025, 1, 1) },
             new Project { Id = 2, Titel = "Portfolio Website", Beschrijving = "Een persoonlijke portfolio website gebouwd met HTML, CSS en JavaScript.", Categorie = "JavaScript", GitHubUrl = "https://github.com/pangsiubao/portfolio", Datum = new DateTime(2026, 1, 1) },
             new Project { Id = 3, Titel = "E-commerce Platform", Beschrijving = "Een volledig functioneel e-commerce platform met winkelwagen en betalingsintegratie.", Categorie = "Python", GitHubUrl = "https://github.com/pangsiubao/portfolio", Datum = new DateTime(2023, 1, 1) },
             new Project { Id = 4, Titel = "Mobile Game", Beschrijving = "Een mobiele game ontwikkeld met Unity en C#.", Categorie = "C#", GitHubUrl = "https://github.com/pangsiubao/portfolio", Datum = new DateTime(2024, 1, 1) },
