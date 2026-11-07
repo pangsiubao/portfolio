@@ -26,7 +26,6 @@ Alle code staat in `backend/PortfolioApi`:
 | `Dtos/`        | Wat de API ontvangt en terugstuurt. Geen enkel endpoint ontvangt of verstuurt een entiteit.             |
 | `Migrations/`  | De EF Core-migraties waarmee de database wordt aangemaakt en bijgewerkt.                                |
 
-De DbContext en de services worden via dependency injection geregistreerd in `Program.cs` en via de constructor doorgegeven aan de services en controllers.
 
 ## De applicatie starten
 
