@@ -1,18 +1,75 @@
+using Microsoft.EntityFrameworkCore;
+using PortfolioApi.Data;
+using PortfolioApi.Dtos;
 using PortfolioApi.Models;
 
 namespace PortfolioApi.Services;
 
 public class BlogpostService
 {
-    private readonly List<Blogpost> _blogposts = new()
-    {
-        new Blogpost { Id = 1, Titel = "Leren programmeren", Inhoud = "In dit blog deel ik mijn ervaringen met leren programmeren. Ik vertel over de eerste stappen die ik zette, de uitdagingen die ik tegenkwam en de lessen die ik leerde. Hopelijk kan mijn verhaal anderen inspireren en helpen bij hun eigen leerproces.", Publicatiedatum = new DateTime(2025, 1, 1) },
-        new Blogpost { Id = 2, Titel = "Python of C#?", Inhoud = "In dit blog deel ik mijn ervaringen met het kiezen tussen Python en C#. Ik bespreek de voordelen en nadelen van beide talen en hoe ik mijn keuze bepaal.", Publicatiedatum = new DateTime(2025, 1, 1) },
-        new Blogpost { Id = 3, Titel = "Mijn eerste website", Inhoud = "In dit blog deel ik mijn ervaringen met het bouwen van mijn eerste website. Ik vertel over de uitdagingen die ik tegenkwam, de lessen die ik leerde en de tips die ik zou geven aan anderen die net beginnen.", Publicatiedatum = new DateTime(2026, 1, 1) },
-        new Blogpost { Id = 4, Titel = "Code schoon houden", Inhoud = "In dit blog deel ik mijn ervaringen met het onderhouden van schoon code. Ik bespreek drie gewoontes die mij helpen om mijn projecten ook na maanden nog leesbaar en onderhoudbaar te houden.", Publicatiedatum = new DateTime(2026, 1, 1) },
-        new Blogpost { Id = 5, Titel = "De kracht van kleine projecten", Inhoud = "In dit blog deel ik mijn ervaringen met het bouwen van kleine projecten. Ik bespreek de voordelen van kleine projecten, de lessen die ik leerde en hoe ze mijn vaardigheden als ontwikkelaar hebben verbeterd.", Publicatiedatum = new DateTime(2024, 1, 1) },
-        new Blogpost { Id = 6, Titel = "Samenwerken in code", Inhoud = "In dit blog deel ik mijn ervaringen met het samenwerken in code. Ik bespreek de uitdagingen die ik tegenkwam, de tools die ik gebruikte en de lessen die ik leerde over effectief samenwerken.", Publicatiedatum = new DateTime(2025, 1, 1) },
-    };
+    private readonly PortfolioDbContext _context;
 
-    public List<Blogpost> GetAll() => _blogposts;
+    // De DbContext komt binnen via dependency injection (geregistreerd in Program.cs).
+    public BlogpostService(PortfolioDbContext context)
+    {
+        _context = context;
+    }
+
+    public async Task<List<BlogpostDto>> GetAllAsync()
+    {
+        var blogposts = await _context.Blogposts.AsNoTracking().ToListAsync();
+        return blogposts.Select(ToDto).ToList();
+    }
+
+    public async Task<BlogpostDto?> GetByIdAsync(int id)
+    {
+        var blogpost = await _context.Blogposts.FindAsync(id);
+        return blogpost is null ? null : ToDto(blogpost);
+    }
+
+    public async Task<BlogpostDto> CreateAsync(BlogpostCreateDto dto)
+    {
+        var blogpost = new Blogpost
+        {
+            Titel = dto.Titel,
+            Inhoud = dto.Inhoud,
+            Publicatiedatum = dto.Publicatiedatum
+        };
+
+        _context.Blogposts.Add(blogpost);
+        await _context.SaveChangesAsync();
+        return ToDto(blogpost);
+    }
+
+    public async Task<bool> UpdateAsync(int id, BlogpostCreateDto dto)
+    {
+        var blogpost = await _context.Blogposts.FindAsync(id);
+        if (blogpost is null) return false;
+
+        blogpost.Titel = dto.Titel;
+        blogpost.Inhoud = dto.Inhoud;
+        blogpost.Publicatiedatum = dto.Publicatiedatum;
+
+        await _context.SaveChangesAsync();
+        return true;
+    }
+
+    public async Task<bool> DeleteAsync(int id)
+    {
+        var blogpost = await _context.Blogposts.FindAsync(id);
+        if (blogpost is null) return false;
+
+        _context.Blogposts.Remove(blogpost);
+        await _context.SaveChangesAsync();
+        return true;
+    }
+
+    // Zet een EF Core-entiteit om naar een DTO, zodat de entiteit nooit de API verlaat.
+    private static BlogpostDto ToDto(Blogpost b) => new()
+    {
+        Id = b.Id,
+        Titel = b.Titel,
+        Inhoud = b.Inhoud,
+        Publicatiedatum = b.Publicatiedatum
+    };
 }
